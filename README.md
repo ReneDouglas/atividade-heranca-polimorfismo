@@ -12,58 +12,46 @@ Você deverá criar uma estrutura de classes que represente os funcionários da 
 
 ## Estrutura de Classes a Ser Implementada
 
-### Superclasse Abstrata: `Funcionario`
-
+## Superclasse Abstrata: `Funcionario`
 Esta classe servirá como um modelo para todos os tipos de funcionários. Nenhum objeto do tipo Funcionario poderá ser instanciado diretamente.
 
-Atributos (protegidos - `protected`):
-
+### Atributos (protegidos - `protected`):
 - `nome` (String): Nome completo do funcionário.
 - `matricula` (String): Identificador único do funcionário.
 - `salarioBase` (double): Salário bruto mensal, sem bônus ou descontos.
 
-**Construtor:**
+### Construtor
+- Deve receber `nome`, `matricula` e `salarioBase` para inicializar os atributos.
 
-Deve receber `nome`, `matricula` e `salarioBase` para inicializar os atributos.
-
-**Métodos:**
-
+### Métodos
 - `calcularSalario()`: Método abstrato que não terá implementação na superclasse. Sua assinatura será public abstract double calcularSalario();. Este método será responsável por calcular o salário final do mês, aplicando bônus e outras regras específicas de cada cargo.
 
 
-### Subclasse `Desenvolvedor`
-
+## Subclasse `Desenvolvedor`
 Representa os programadores da empresa.
 
-**Atributos Adicionais (privados):**
-
+### Atributos Adicionais (privados):
 - `tecnologias` (array de String): Uma lista das principais tecnologias que o desenvolvedor domina (ex: "Java", "React", "Docker", "AWS").
 
-**Construtor:**
+### Construtor
+- Deve receber `nome`, `matricula`, `salarioBase` e o array de `tecnologias`.
 
-Deve receber `nome`, `matricula`, `salarioBase` e o array de `tecnologias`.
-
-**Regra de Negócio para `calcularSalario()` (@Override):**
-
+### Regra de Negócio para `calcularSalario()` (@Override):
 - O salário de um desenvolvedor é o salarioBase acrescido de um bônus de R$ 500,00 por cada tecnologia que ele domina.
 
 Exemplo: Um desenvolvedor com salário base de R$ 5.000,00 que domina 4 tecnologias receberá R$ 7.000,00.
 
 
-### Subclasse `Gerente de Projetos`
-
+## Subclasse `Gerente de Projetos`
 Responsável por liderar equipes e gerenciar projetos.
 
-**Atributos Adicionais (privados):**
+### Atributos Adicionais (privados)
+- `quantidadeProjetos` (int): O número de projetos que o gerente está liderando atualmente.
 
-`quantidadeProjetos` (int): O número de projetos que o gerente está liderando atualmente.
+### Construtor
+- Deve receber `nome`, `matricula`, `salarioBase` e `quantidadeProjetos`.
 
-**Construtor:**
-
-Deve receber `nome`, `matricula`, `salarioBase` e `quantidadeProjetos`.
-
-**Regra de Negócio para `calcularSalario()` (@Override):**
-
+### Regra de Negócio para `calcularSalario()` (@Override)
 - O salário de um gerente é o salarioBase acrescido de um bônus fixo de R$ 350,00 por cada projeto que ele gerencia.
 - Além disso, ele recebe uma bonificação de liderança de 15% sobre o valor total (salário base + bônus por projetos).
 - Fórmula: `salarioFinal = (salarioBase + (quantidadeProjetos * 350)) * 1.15`
@@ -71,21 +59,17 @@ Deve receber `nome`, `matricula`, `salarioBase` e `quantidadeProjetos`.
 Exemplo: Um gerente com salário base de R$ 8.000,00 e 3 projetos terá um salário final de (8000 + 1050) * 1.15 = R$ 10.407,50.
 
 
-### Subclasse `Analista de Qualidade (QA)`
-
+## Subclasse `Analista de Qualidade (QA)`
 Responsável por garantir a qualidade do software através de testes.
 
-**Atributos Adicionais (privados):**
-
+### Atributos Adicionais (privados)
 - `nivel` (String): O nível do analista ("JUNIOR" ou "SENIOR").
 - `possuiCertificacao` (boolean): Indica se o analista possui uma certificação reconhecida (ex: CTFL, ISTQB).
 
-**Construtor:**
+### Construtor
+- Deve receber `nome`, `matricula`, `salarioBase`, `nivel` e `possuiCertificacao`.
 
-Deve receber `nome`, `matricula`, `salarioBase`, `nivel` e `possuiCertificacao`.
-
-**Regra de Negócio para `calcularSalario()` (@Override):**
-
+### Regra de Negócio para `calcularSalario()` (@Override)
 - O salário de um QA é o salarioBase.
 - Se for do nível "SENIOR", ele recebe um bônus de 25% sobre o salarioBase.
 - Se possuir uma certificação, ele recebe um bônus fixo adicional de R$ 500,00, independentemente do nível.
@@ -97,12 +81,10 @@ Exemplo: Um analista SÊNIOR com certificação e salário base de R$ 4.000,00 r
 
 Para demonstrar o poder do polimorfismo, crie uma classe DepartamentoRH que gerencia uma lista de funcionários sem se preocupar com o cargo específico de cada um.
 
-**Atributo:**
+### Atributo
+- `funcionarios` (um ArrayList de Funcionarios): Para armazenar todos os funcionários da empresa.
 
-`funcionarios` (um ArrayList de Funcionarios): Para armazenar todos os funcionários da empresa.
-
-**Métodos:**
-
+### Métodos
 - `adicionarFuncionario(Funcionario funcionario)`: Adiciona um funcionário (seja ele Desenvolvedor, GerenteDeProjetos ou AnalistaDeQualidade) à lista.
 - `removerFuncionario(String matricula)`: Remove um funcionário da lista com base na sua matrícula.
 - `gerarFolhaDePagamento()`: Este método deve iterar pela lista funcionarios e, para cada funcionário, fazer o seguinte:
