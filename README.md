@@ -125,9 +125,9 @@ Para demonstrar o poder do polimorfismo, crie uma classe DepartamentoRH que gere
 - `removerFuncionario(String matricula)`: Remove um funcionário da lista com base na sua matrícula.
 - `gerarFolhaDePagamento()`: Este método deve iterar pela lista funcionarios e, para cada funcionário, fazer o seguinte:
    - Obter o nome e a matrícula.
-   - Invocar o método calcularSalario(). Graças ao polimorfismo, o Java executará a versão correta do método (a da subclasse específica).
-   - Imprimir uma linha formatada no console, como: Nome: [Nome], Matrícula: [Matrícula], Salário Final: R$ [Valor]
--`calcularCustoTotalFolha()`: Itera pela lista e retorna a soma de todos os salários calculados, representando o custo total da folha de pagamento do mês.
+   - Invocar o método `calcularSalario()`. Graças ao polimorfismo, o Java executará a versão correta do método (a da subclasse específica).
+   - Imprimir uma linha formatada no console, como: Nome: [Nome], Matrícula: [Matrícula], Salário Final: R$ [Valor].
+- `calcularCustoTotalFolha()`: Itera pela lista e retorna a soma de todos os salários calculados, representando o custo total da folha de pagamento do mês.
 
 ## Tarefa a Ser Executada (Classe Main)
 
