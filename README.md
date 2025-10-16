@@ -76,8 +76,44 @@ Responsável por garantir a qualidade do software através de testes.
 
 Exemplo: Um analista SÊNIOR com certificação e salário base de R$ 4.000,00 receberá (4000 * 1.25) + 500 = R$ 5.500,00. Um analista JÚNIOR sem certificação com o mesmo base receberia apenas os R$ 4.000,00.
 
+## Classe `Designer UIUX`
 
-## Utilizando o Polimorfismo: Classe DepartamentoRH
+Representa os especialistas em User Interface (Interface de Usuário) e User Experience (Experiência do Usuário), responsáveis por criar as telas e a usabilidade dos sistemas.
+
+### Atributos Adicionais (privados)
+- `anosDeExperiencia` (int): Quantidade de anos que o designer atua no mercado.
+- `ferramentaPrincipal` (String): A principal ferramenta de design que utiliza (ex: "Figma", "Adobe XD", "Sketch").
+
+### Construtor
+- Deve receber `nome`, `matricula`, `salarioBase`, `anosDeExperiencia` e `ferramentaPrincipal`.
+
+### Regra de Negócio para calcularSalario() (@Override)
+- O salário de um designer parte do salarioBase.
+- Ele recebe uma bonificação por senioridade de 20% sobre o salarioBase se tiver mais de 5 anos de experiência.
+- Adicionalmente, há um bônus de ferramenta de R$ 500,00 fixos se a sua ferramenta principal for "Figma", pois é a ferramenta padrão da empresa e otimiza a colaboração com os desenvolvedores.
+
+- Exemplo 1: Um designer com 6 anos de experiência, que usa "Figma" e tem salário base de R$ 6.000,00, receberá (6000 * 1.20) + 500 = 7200 + 500 = R$ 7.700,00.
+- Exemplo 2: Um designer com 3 anos de experiência, que usa "Adobe XD" e tem o mesmo base, receberá apenas os R$ 6.000,00.
+
+## Classe `Estagiario`
+Representa os estudantes que estão no programa de estágio da empresa, aprendendo e auxiliando nas tarefas. Esta classe é interessante pois possui regras de remuneração bem distintas.
+
+### Atributos Adicionais (privados)
+- `horasSemanais` (int): A carga horária semanal do estagiário (geralmente 20 ou 30 horas).
+- `universidade` (String): A instituição de ensino onde o estagiário estuda.
+- `valeTransporte` (double): Um valor fixo mensal de ajuda de custo para transporte.
+
+### Construtor
+- Deve receber `nome`, `matricula`, o valor da `bolsaAuxilio` (que será passado para o `salarioBase` da superclasse), `horasSemanais`, `universidade` e `valeTransporte`.
+
+### Regra de Negócio para calcularSalario() (@Override)
+- A remuneração de um estagiário não é considerada um "salário" com bônus, mas sim o valor da sua bolsa-auxílio (salarioBase) somado aos seus benefícios.
+- O método `calcularSalario()` para o estagiário deve simplesmente retornar a soma da bolsaAuxilio (salarioBase) com o valeTransporte.
+  - Importante: A lógica de bônus e percentuais não se aplica a ele, demonstrando um uso completamente diferente do método polimórfico.
+
+Exemplo: Um estagiário com bolsa-auxílio de R$ 1.200,00 e vale-transporte de R$ 150,00 terá um pagamento total de 1200 + 150 = R$ 1.350,00
+
+## Utilizando o Polimorfismo: Classe `DepartamentoRH`
 
 Para demonstrar o poder do polimorfismo, crie uma classe DepartamentoRH que gerencia uma lista de funcionários sem se preocupar com o cargo específico de cada um.
 
@@ -92,7 +128,6 @@ Para demonstrar o poder do polimorfismo, crie uma classe DepartamentoRH que gere
    - Invocar o método calcularSalario(). Graças ao polimorfismo, o Java executará a versão correta do método (a da subclasse específica).
    - Imprimir uma linha formatada no console, como: Nome: [Nome], Matrícula: [Matrícula], Salário Final: R$ [Valor]
 -`calcularCustoTotalFolha()`: Itera pela lista e retorna a soma de todos os salários calculados, representando o custo total da folha de pagamento do mês.
-
 
 ## Tarefa a Ser Executada (Classe Main)
 
