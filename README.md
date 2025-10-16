@@ -30,6 +30,7 @@ Deve receber `nome`, `matricula` e `salarioBase` para inicializar os atributos.
 
 - `calcularSalario()`: Método abstrato que não terá implementação na superclasse. Sua assinatura será public abstract double calcularSalario();. Este método será responsável por calcular o salário final do mês, aplicando bônus e outras regras específicas de cada cargo.
 
+
 ### Subclasse `Desenvolvedor`
 
 Representa os programadores da empresa.
@@ -48,6 +49,7 @@ Deve receber `nome`, `matricula`, `salarioBase` e o array de `tecnologias`.
 
 Exemplo: Um desenvolvedor com salário base de R$ 5.000,00 que domina 4 tecnologias receberá R$ 7.000,00.
 
+
 ### Subclasse `Gerente de Projetos`
 
 Responsável por liderar equipes e gerenciar projetos.
@@ -64,10 +66,10 @@ Deve receber `nome`, `matricula`, `salarioBase` e `quantidadeProjetos`.
 
 - O salário de um gerente é o salarioBase acrescido de um bônus fixo de R$ 350,00 por cada projeto que ele gerencia.
 - Além disso, ele recebe uma bonificação de liderança de 15% sobre o valor total (salário base + bônus por projetos).
-
-Fórmula: `salarioFinal = (salarioBase + (quantidadeProjetos * 350)) * 1.15`
+- Fórmula: `salarioFinal = (salarioBase + (quantidadeProjetos * 350)) * 1.15`
 
 Exemplo: Um gerente com salário base de R$ 8.000,00 e 3 projetos terá um salário final de (8000 + 1050) * 1.15 = R$ 10.407,50.
+
 
 ### Subclasse `Analista de Qualidade (QA)`
 
@@ -90,6 +92,7 @@ Deve receber `nome`, `matricula`, `salarioBase`, `nivel` e `possuiCertificacao`.
 
 Exemplo: Um analista SÊNIOR com certificação e salário base de R$ 4.000,00 receberá (4000 * 1.25) + 500 = R$ 5.500,00. Um analista JÚNIOR sem certificação com o mesmo base receberia apenas os R$ 4.000,00.
 
+
 ## Utilizando o Polimorfismo: Classe DepartamentoRH
 
 Para demonstrar o poder do polimorfismo, crie uma classe DepartamentoRH que gerencia uma lista de funcionários sem se preocupar com o cargo específico de cada um.
@@ -107,6 +110,7 @@ Para demonstrar o poder do polimorfismo, crie uma classe DepartamentoRH que gere
    - Invocar o método calcularSalario(). Graças ao polimorfismo, o Java executará a versão correta do método (a da subclasse específica).
    - Imprimir uma linha formatada no console, como: Nome: [Nome], Matrícula: [Matrícula], Salário Final: R$ [Valor]
 -`calcularCustoTotalFolha()`: Itera pela lista e retorna a soma de todos os salários calculados, representando o custo total da folha de pagamento do mês.
+
 
 ## Tarefa a Ser Executada (Classe Main)
 
