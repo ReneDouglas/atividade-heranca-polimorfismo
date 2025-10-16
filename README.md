@@ -30,7 +30,7 @@ Deve receber `nome`, `matricula` e `salarioBase` para inicializar os atributos.
 
 - `calcularSalario()`: Método abstrato que não terá implementação na superclasse. Sua assinatura será public abstract double calcularSalario();. Este método será responsável por calcular o salário final do mês, aplicando bônus e outras regras específicas de cada cargo.
 
-### Subclasse Desenvolvedor
+### Subclasse `Desenvolvedor`
 
 Representa os programadores da empresa.
 
@@ -48,7 +48,7 @@ Deve receber `nome`, `matricula`, `salarioBase` e o array de `tecnologias`.
 
 Exemplo: Um desenvolvedor com salário base de R$ 5.000,00 que domina 4 tecnologias receberá R$ 7.000,00.
 
-### Subclasse Gerente de Projetos
+### Subclasse `Gerente de Projetos`
 
 Responsável por liderar equipes e gerenciar projetos.
 
@@ -69,7 +69,7 @@ Fórmula: `salarioFinal = (salarioBase + (quantidadeProjetos * 350)) * 1.15`
 
 Exemplo: Um gerente com salário base de R$ 8.000,00 e 3 projetos terá um salário final de (8000 + 1050) * 1.15 = R$ 10.407,50.
 
-### Subclasse Analista de Qualidade (QA)
+### Subclasse `Analista de Qualidade (QA)`
 
 Responsável por garantir a qualidade do software através de testes.
 
