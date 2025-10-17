@@ -1,0 +1,25 @@
+package entidades;
+
+public class Gerente_projetos extends Funcionario {
+    private Integer quantidadeProjetos;
+    private final Double BONUS_FIXO = 350.0;
+    private final Double BONIFICACAO_LIDERANCA = 1.15;
+
+    public Gerente_projetos(String nome, String matricula, Double salarioBase, Integer quantidadeProjetos) {
+        super(nome, matricula, salarioBase);
+        this.quantidadeProjetos = quantidadeProjetos;
+    }
+
+    @Override
+    public Double calcularSalario() {
+        return (salarioBase + (quantidadeProjetos * BONUS_FIXO)) * BONIFICACAO_LIDERANCA;
+    }
+
+    public Integer getQuantidadeProjetos() {
+        return quantidadeProjetos;
+    }
+
+    public void setQuantidadeProjetos(Integer quantidadeProjetos) {
+        this.quantidadeProjetos = quantidadeProjetos;
+    }
+}
