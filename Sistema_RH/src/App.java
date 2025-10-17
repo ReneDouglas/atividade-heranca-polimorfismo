@@ -40,12 +40,17 @@ public class App {
     AnalistaDeQualidade aq1 = new AnalistaDeQualidade("Eva", "A001", 4000.0, "SENIOR", true);
     AnalistaDeQualidade aq2 = new AnalistaDeQualidade("Frank", "A002", 3500.0, "JUNIOR", false);
 
+    Estagiario est1 = new Estagiario("Gina", "E001", 1200.0, 20, "UFSC", 150.0);
+    Estagiario est2 = new Estagiario("Hugo", "E002", 1000.0, 30, "USP", 100.0);
+
     rh.adicionarFuncionario(dev1);
     rh.adicionarFuncionario(dev2);
     rh.adicionarFuncionario(gp1);
     rh.adicionarFuncionario(gp2);
     rh.adicionarFuncionario(aq1);
     rh.adicionarFuncionario(aq2);
+    rh.adicionarFuncionario(est1);
+    rh.adicionarFuncionario(est2);
 
     rh.gerarFolhaDePagamento();
 
